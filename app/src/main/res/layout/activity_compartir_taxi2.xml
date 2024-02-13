@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".compartir_taxi2">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </fragment>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/white"
+            app:cardCornerRadius="20dp">
+
+            <fragment
+                android:id="@+id/placeAutocompleteOrigin"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></fragment>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            app:cardCornerRadius="20dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <fragment
+                android:id="@+id/placeAutocompleteDestination"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></fragment>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_Compartir"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:textColorHighlight="#FABF2D"
+            android:textColorLink="#FABF2D"
+            app:icon="@drawable/compartir" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCompartirEncontrado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="ENCONTRADO"
+        android:textColor="@color/white" />
+
+    <include
+        layout="@layout/action_bar_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></include>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/localizacion" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
